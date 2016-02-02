@@ -29,7 +29,7 @@
                 display: table;
                 font-weight: 100;
                 margin: 0;
-                padding: 3em 1em;
+                padding: 1em;
                 width: 100%;
             }
 
@@ -45,7 +45,7 @@
             }
 
             .title {
-                font-size: 2em;
+                display: none;
             }
 
             .links {
@@ -56,13 +56,19 @@
                 color: red;
             }
 
+            .what-is-this {
+                margin-top: 5em;
+            }
+
             .footer {
                 margin-top: 4em;
             }
 
             @media only screen and (min-width: 500px) {
                 .title {
+                    display: block;
                     font-size: 6em;
+                    margin-top: 1em;
                 }
 
                 .links {
@@ -70,7 +76,7 @@
                 }
 
                 .footer {
-                    margin-top: 8em;
+                    margin-top: 6em;
                 }
             }
         </style>
@@ -89,6 +95,13 @@
                 </p>
                 <p class="links">
                     <a href="https://www.briefs.fm/the-three-minute-geek-show">View episodes</a>
+                </p>
+                <p class="what-is-this">
+                    <h2>What is this?</h2>
+                    <p>Take a listen to the episode where I describe what the Three-Minute Geek Show is about.<br>(Can't play the episode? Go to the <a href="http://briefs.fm/the-three-minute-geek-show">Briefs.fm page</a> to get old-browser-friendly players)</p>
+                    <audio controls preload="metadata" src="https://briefs-production.s3.amazonaws.com/improved_audio/9b322ef3-3742-435d-8acf-ccce5c6a9fe3.mp3">
+                        <source src="https://briefs-production.s3.amazonaws.com/improved_audio/9b322ef3-3742-435d-8acf-ccce5c6a9fe3.mp3" type="audio/mpeg">
+                    </audio>
                 </p>
                 <p class="footer">
                     By <a href="http://twitter.com/stauffermatt">Matt Stauffer</a> | A riff on the <a href="http://fiveminutegeekshow.com/">Five-Minute Geek Show</a> | Powered by <a href="http://briefs.fm/">Briefs.fm</a>

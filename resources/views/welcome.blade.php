@@ -5,6 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <title>The Three-Minute Geek Show</title>
+        <meta name="description" content="Matt Stauffer, being geeky three minutes at a time.">
+
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@3minutegeekshow" />
         <meta name="twitter:title" content="The Three-Minute Geek Show" />
@@ -18,10 +21,6 @@
         <meta property="og:image:width" content="594" />
         <meta property="og:image:height" content="594" />
         <meta property="og:description" content="Matt Stauffer, being geeky three minutes at a time." />
-
-        <meta name="description" content="Matt Stauffer, being geeky three minutes at a time.">
-
-        <title>The Three-Minute Geek Show</title>
 
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 

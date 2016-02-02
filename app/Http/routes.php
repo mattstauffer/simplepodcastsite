@@ -1,31 +1,27 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
 Route::get('/', function () {
-    return view('welcome');
+    $rss = new \Vinelab\Rss\Rss;
+    $feed = $rss->feed(env('RSS_URL'));
+
+    return view('episodes.index')
+        ->with('podcast', $feed->info)
+        ->with('episodes', $feed->articles);
 });
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
+Route::get('{id}', function ($id) {
+    $rss = new \Vinelab\Rss\Rss;
+    $feed = $rss->feed(env('RSS_URL'));
 
-Route::group(['middleware' => ['web']], function () {
-    //
+    $episode = $feed->articles->sortBy(function ($episode, $key) {
+        return new \Carbon\Carbon($episode->pubDate);
+    })->values()->get($id - 1);
+
+    if ($episode == null) {
+        abort(404);
+    }
+    
+    return view('episodes.show')
+        ->with('podcast', $feed->info)
+        ->with('episode', $episode);
 });

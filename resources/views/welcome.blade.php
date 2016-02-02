@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@stauffermatt">
+
+        <meta property="og:title" content="Home | Tighten Blog">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://threeminutegeekshow.com/">
+        <meta property="og:image" content="http://threeminutegeekshow.com/threeminutegeekshowlogo.png">
+        <meta property="og:image:width" content="594">
+        <meta property="og:image:height" content="594">
+        <meta property="og:description" content="Matt Stauffer, being geeky three minutes at a time.">
+
+        <meta name="description" content="Matt Stauffer, being geeky three minutes at a time.">
 
         <title>The Three-Minute Geek Show</title>
 

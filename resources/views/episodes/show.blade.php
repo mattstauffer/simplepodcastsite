@@ -101,18 +101,23 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">The Three-Minute Geek Show</div>
-                <a href="https://www.briefs.fm/the-three-minute-geek-show">
-                    <img src="threeminutegeekshowlogo.png">
+                <div class="title">{{ $podcast['title'] }}</div>
+                <a href="{{ $podcast['link'] }}">
+                    <img src="{{ $podcast['image']->url }}" style="max-width: 50%;">
                 </a>
 
+                <div style="font-size: 1.5em;">
+                <div style="text-align: center;"><a href="/">&lt;- All episodes</a></div>
+                    
                 <div>
                     <h1>{{ $episode->title }}</h1>
                     <p>{{ $episode->description }}</p>
-                    ({{ $episode->pubDate }})
+                    ({{ Carbon\Carbon::parse($episode->pubDate)->format('F j, Y H:i') }})
+                    <br><br>
                     <audio controls preload="metadata" src="{{ $episode->guid }}">
                         <source src="{{ $episode->guid }}" type="audio/mpeg">
                     </audio>
+                </div>
                 </div>
 
                 <p class="footer">

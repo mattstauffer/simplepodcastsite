@@ -5,7 +5,7 @@ Route::get('/', function () {
     $feed = $rss->feed(env('RSS_URL'));
 
     return view('episodes.index')
-        ->with('podcast', $feed->info)
+        ->with('podcast', $feed->info())
         ->with('episodes', $feed->articles);
 });
 
@@ -22,6 +22,6 @@ Route::get('{id}', function ($id) {
     }
     
     return view('episodes.show')
-        ->with('podcast', $feed->info)
+        ->with('podcast', $feed->info())
         ->with('episode', $episode);
 });

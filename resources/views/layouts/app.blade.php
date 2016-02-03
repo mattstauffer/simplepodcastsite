@@ -9,32 +9,30 @@
         <meta name="description" content="{{ $podcast['description'] }}">
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@3minutegeekshow" />
-        <meta name="twitter:title" content="The Three-Minute Geek Show" />
-        <meta name="twitter:description" content="Matt Stauffer, being geeky three minutes at a time." />
-        <meta name="twitter:image" content="http://threeminutegeekshow.com/threeminutegeekshowlogo.png" />
+        <meta name="twitter:site" content="{{ '@' . env('TWITTER_HANDLE') }}" />
+        <meta name="twitter:title" content="{{ $podcast['title'] }}" />
+        <meta name="twitter:description" content="{{ $podcast['description'] }}" />
+        <meta name="twitter:image" content="{{ env('TWITTER_CARD_IMAGE', $podcast['image']->url) }}" />
 
-        <meta property="og:title" content="The Three-Minute Geek Show" />
+        <meta property="og:title" content="{{ $podcast['title'] }}" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://threeminutegeekshow.com/" />
-        <meta property="og:image" content="http://threeminutegeekshow.com/threeminutegeekshowlogo.png" />
-        <meta property="og:image:width" content="594" />
-        <meta property="og:image:height" content="594" />
-        <meta property="og:description" content="Matt Stauffer, being geeky three minutes at a time." />
+        <meta property="og:image" content="{{ env('OG_CARD_IMAGE', $podcast['image']->url) }}" />
+        <meta property="og:image:width" content="{{ env('OG_IMAGE_WIDTH') }}" />
+        <meta property="og:image:height" content="{{ env('OG_IMAGE_HEIGHT') }}" />
+        <meta property="og:description" content="{{ $podcast['description'] }}" />
 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
     </head>
     <body>
         <div class="content">
-            <h1 class="podcast-title">{{ $podcast['title'] }}</h1>
-            <a href="{{ $podcast['link'] }}" class="podcast-logo">
-                <img src="{{ $podcast['image']->url }}">
-            </a>
+            @include('partials.header', ['podcast' => $podcast])
+            
             @yield('content')
 
             <p class="footer">
-                By <a href="http://twitter.com/stauffermatt">Matt Stauffer</a> | A riff on the <a href="http://fiveminutegeekshow.com/">Five-Minute Geek Show</a> | Powered by <a href="http://briefs.fm/">Briefs.fm</a>
+                @include('customize.footer', ['podcast' => $podcast])
             </p>
         </div>
     </body>

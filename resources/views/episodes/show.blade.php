@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div style="text-align: center;"><a href="/">&lt;- All episodes</a></div>
+    <a href="/" class="back-to-index">&lt;- All episodes</a>
         
     <div>
         <h1>{{ $episode->title }}</h1>

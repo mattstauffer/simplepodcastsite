@@ -1,0 +1,75 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html, body {
+  background: #cee7d8;
+  font-family: 'Roboto', sans-serif;
+  height: 100%; }
+
+img {
+  max-width: 100%; }
+
+body {
+  display: table;
+  font-weight: 100;
+  margin: 0;
+  padding: 1em;
+  width: 100%; }
+
+.content {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 900px; }
+
+.podcast-title {
+  display: none; }
+
+.podcast-logo img {
+  width: 15em; }
+
+.links {
+  font-size: 1.25em; }
+  .links a {
+    color: red; }
+
+.what-is-this {
+  margin-top: 5em; }
+
+.footer {
+  margin-top: 4em; }
+
+.episodes-list {
+  display: block;
+  margin: 0 auto;
+  max-width: 30em;
+  text-align: left;
+  font-size: 1.25em; }
+
+.episodes-title {
+  font-size: 2em; }
+
+@media only screen and (min-width: 500px) {
+  .title {
+    display: block;
+    font-size: 6em;
+    margin-top: 1em; }
+  .links {
+    font-size: 1.5em; }
+  .footer {
+    margin-top: 6em; }
+  .episodes-list {
+    font-size: 1.5em; }
+  .episodes-title {
+    font-size: 2em; }
+  .what-is-this {
+    font-size: 1.25em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 30em; } }
+
+/*# sourceMappingURL=app.css.map */

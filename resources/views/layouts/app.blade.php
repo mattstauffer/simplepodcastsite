@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>The Three-Minute Geek Show</title>
+        <title>{{ $podcast['title'] }}</title>
         <meta name="description" content="Matt Stauffer, being geeky three minutes at a time.">
 
         <meta name="twitter:card" content="summary" />
@@ -96,31 +96,40 @@
                     margin-top: 6em;
                 }
             }
+                .episodes-list {
+                    display: block;
+                    margin: 0 auto;
+                    max-width: 30em;
+                    text-align: left;
+                    font-size: 1.25em;
+                }
+                .episodes-title {
+                    font-size: 2em;
+                }
+
+                @media only screen and (min-width: 500px) {
+                    .episodes-list {
+                        font-size: 2em;
+                    }
+                    .episodes-title {
+                        font-size: 4em;
+                        }
+                    .what-is-this {
+                        font-size: 1.5em;
+                        }
+
+                    }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">The Three-Minute Geek Show</div>
-                <a href="https://www.briefs.fm/the-three-minute-geek-show">
-                    <img src="threeminutegeekshowlogo.png">
+                <div class="title">{{ $podcast['title'] }}</div>
+                <a href="{{ $podcast['link'] }}">
+                    <img src="{{ $podcast['image']->url }}" style="max-width: 50%;">
                 </a>
-                <p class="links">
-                    <a href="itpc://www.briefs.fm/the-three-minute-geek-show.xml">Subscribe in iTunes</a> |
-                    <a href="overcast://x-callback-url/add?url=https://www.briefs.fm/the-three-minute-geek-show.xml">Subscribe in Overcast</a> |
-                    <a href="podcast://www.briefs.fm/the-three-minute-geek-show.xml">Subscribe in Podcasts.app</a>
-                </p>
-                <p class="links">
-                    <a href="https://www.briefs.fm/the-three-minute-geek-show">View episodes</a>
-                </p>
-                <p class="what-is-this">
-                    <h2>What is this?</h2>
-                    <p>It's an experiment. Unlike the Five-Minute Geek Show, which is a real grown-up podcast with editing and music, this is just off-the-cuff thoughts and updates.</p>
-                    <p>Take a listen to the episode where I describe what the Three-Minute Geek Show is about.<br>(Can't play the episode? Go to the <a href="http://briefs.fm/the-three-minute-geek-show">Briefs.fm page</a> to get old-browser-friendly players)</p>
-                    <audio controls preload="metadata" src="https://briefs-production.s3.amazonaws.com/improved_audio/9b322ef3-3742-435d-8acf-ccce5c6a9fe3.mp3">
-                        <source src="https://briefs-production.s3.amazonaws.com/improved_audio/9b322ef3-3742-435d-8acf-ccce5c6a9fe3.mp3" type="audio/mpeg">
-                    </audio>
-                </p>
+                @yield('content')
+
                 <p class="footer">
                     By <a href="http://twitter.com/stauffermatt">Matt Stauffer</a> | A riff on the <a href="http://fiveminutegeekshow.com/">Five-Minute Geek Show</a> | Powered by <a href="http://briefs.fm/">Briefs.fm</a>
                 </p>

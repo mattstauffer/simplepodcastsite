@@ -16,7 +16,7 @@
 
         <meta property="og:title" content="{{ $podcast['title'] }}" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://threeminutegeekshow.com/" />
+        <meta property="og:url" content="http://{{ config('customize.domain') }}/" />
         <meta property="og:image" content="{{ config('customize.opengraph.card_image', $podcast['image']->url) }}" />
         <meta property="og:image:width" content="{{ config('customize.opengraph.image_width') }}" />
         <meta property="og:image:height" content="{{ config('customize.opengraph.image_height') }}" />

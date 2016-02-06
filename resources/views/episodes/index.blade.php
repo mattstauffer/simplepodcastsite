@@ -25,6 +25,6 @@
 
 @section('scripts')
     @if (config('customize.disqus_shortname'))
-    <script id="dsq-count-scr" src="//threeminutegeekshow.disqus.com/count.js" async></script>
+    <script id="dsq-count-scr" src="//{{ config('customize.disqus_shortname') }}.disqus.com/count.js" async></script>
     @endif
 @endsection

@@ -12,7 +12,9 @@
                 <a href="/{{ $episodes->count() - $key }}">{{ $episode->title }}</a>
                 <p class="episode__description">{{ $episode->description }}</p>
 
+                @if (env('DISQUS_KEY'))
                 <a  style="font-size: 0.75em;" href="http://{{ env('DOMAIN') }}/{{ $episodes->count() - $key }}#disqus_thread">(Comments)</a>
+                @endif
             </li>
         @endforeach
         </ul>
@@ -22,5 +24,7 @@
 @endsection
 
 @section('scripts')
+    @if (env('DISQUS_KEY'))
     <script id="dsq-count-scr" src="//threeminutegeekshow.disqus.com/count.js" async></script>
+@endif
 @endsection

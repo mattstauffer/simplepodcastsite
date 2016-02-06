@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ $podcast['title'] }}</title>
+        <title>{{ isset($pageTitle) ? "$pageTitle | " : "" }}{{ $podcast['title'] }}</title>
         <meta name="description" content="{{ $podcast['description'] }}">
 
         <meta name="twitter:card" content="summary" />
@@ -46,5 +46,7 @@
               ga('send', 'pageview');
             </script>
         @endif
+
+        @yield('scripts')
     </body>
 </html>

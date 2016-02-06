@@ -23,5 +23,6 @@ Route::get('{id}', function ($id) {
     
     return view('episodes.show')
         ->with('podcast', $feed->info())
+        ->with('pageTitle', $episode->title)
         ->with('episode', $episode);
 });

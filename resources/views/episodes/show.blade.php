@@ -18,7 +18,7 @@
             <div id="disqus_thread"></div>
             <script>
             var disqus_config = function () {
-                this.page.url = "{{ Request::url() }}";
+                this.page.url = "http://{{ env('DOMAIN') }}/{{ Request::path() }}";
                 this.page.identifier = "{{ $episode->guid }}";
             };
             (function() { // DON'T EDIT BELOW THIS LINE

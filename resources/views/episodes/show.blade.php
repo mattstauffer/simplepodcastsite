@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    <p>
     <a href="/" class="back-to-index">&lt;- All episodes</a>
-        
+    </p>
+
     <div>
         <h1>{{ $episode->title }}</h1>
         <p>{{ $episode->description }}</p>

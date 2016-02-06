@@ -24,6 +24,11 @@
 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
+        <style>
+            body {
+                background: {{ config('customize.background_color') }};
+            }
+        </style>
     </head>
     <body>
         <div class="content">

@@ -13,5 +13,6 @@ return [
     ],
     'google_analytics_id' => env('GOOGLE_ANALYTICS_ID'),
     'disqus_shortname' => env('DISQUS_SHORTNAME'),
+    'background_color' => env('BACKGROUND_COLOR'),
 ];
 

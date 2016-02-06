@@ -9,17 +9,17 @@
         <meta name="description" content="{{ $podcast['description'] }}">
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="{{ '@' . env('TWITTER_HANDLE') }}" />
+        <meta name="twitter:site" content="{{ '@' . config('customize.twitter.handle') }}" />
         <meta name="twitter:title" content="{{ $podcast['title'] }}" />
         <meta name="twitter:description" content="{{ $podcast['description'] }}" />
-        <meta name="twitter:image" content="{{ env('TWITTER_CARD_IMAGE', $podcast['image']->url) }}" />
+        <meta name="twitter:image" content="{{ config('customize.twitter.card_image', $podcast['image']->url) }}" />
 
         <meta property="og:title" content="{{ $podcast['title'] }}" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://threeminutegeekshow.com/" />
-        <meta property="og:image" content="{{ env('OG_CARD_IMAGE', $podcast['image']->url) }}" />
-        <meta property="og:image:width" content="{{ env('OG_IMAGE_WIDTH') }}" />
-        <meta property="og:image:height" content="{{ env('OG_IMAGE_HEIGHT') }}" />
+        <meta property="og:image" content="{{ config('customize.opengraph.card_image', $podcast['image']->url) }}" />
+        <meta property="og:image:width" content="{{ config('customize.opengraph.image_width') }}" />
+        <meta property="og:image:height" content="{{ config('customize.opengraph.image_height') }}" />
         <meta property="og:description" content="{{ $podcast['description'] }}" />
 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
@@ -35,14 +35,14 @@
                 @include('customize.footer', ['podcast' => $podcast])
             </p>
         </div>
-        @if (env('GOOGLE_ANALYTICS_ID'))
+        @if (config('customize.google_analytics_id'))
             <script>
               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
               (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
               m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
               })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-              ga('create', '{{ env('GOOGLE_ANALYTICS_ID') }}', 'auto');
+              ga('create', '{{ config('customize.google_analytics_id') }}', 'auto');
               ga('send', 'pageview');
             </script>
         @endif

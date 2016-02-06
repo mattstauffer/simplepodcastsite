@@ -13,18 +13,18 @@
             <source src="{{ $episode->guid }}" type="audio/mpeg">
         </audio>
 
-        @if (env('DISQUS_KEY'))
+        @if (config('customize.disqus_shortname'))
             <h3>Comments</h3>
             <div id="disqus_thread"></div>
             <script>
             var disqus_config = function () {
-                this.page.url = "http://{{ env('DOMAIN') }}/{{ Request::path() }}";
+                this.page.url = "http://{{ config('customize.domain') }}/{{ Request::path() }}";
                 this.page.identifier = "{{ $episode->guid }}";
             };
             (function() { // DON'T EDIT BELOW THIS LINE
                 var d = document, s = d.createElement('script');
 
-                s.src = '//{{ env('DISQUS_KEY') }}.disqus.com/embed.js';
+                s.src = '//{{ config('customize.disqus_shortname') }}.disqus.com/embed.js';
 
                 s.setAttribute('data-timestamp', +new Date());
                 (d.head || d.body).appendChild(s);

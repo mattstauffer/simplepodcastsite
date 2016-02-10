@@ -6,23 +6,21 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\RssFeed;
 use Carbon\Carbon;
-use Vinelab\Rss\Feed;
 
 class EpisodeController extends Controller
 {
-    public function index(Feed $feed)
+    public function index(RssFeed $feed)
     {
         return view('episodes.index')
             ->with('podcast', $feed->info())
-            ->with('episodes', $feed->articles);
+            ->with('episodes', $feed->articles->reverse());
     }
 
-    public function show($id, Feed $feed)
+    public function show($id, RssFeed $feed)
     {
-        $episode = $feed->articles->sortBy(function ($episode, $key) {
-            return new Carbon($episode->pubDate);
-        })->values()->get($id - 1);
+        $episode = $feed->articles->get($id);
 
         if ($episode == null) {
             abort(404);

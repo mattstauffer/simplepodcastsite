@@ -27,10 +27,11 @@ class EpisodeController extends Controller
         if ($episode == null) {
             abort(404);
         }
-        
+
         return view('episodes.show')
             ->with('podcast', $feed->info())
             ->with('pageTitle', $episode->title)
-            ->with('episode', $episode);
+            ->with('episode', $episode)
+            ->with('episodeCount', $feed->articles->count());
     }
 }

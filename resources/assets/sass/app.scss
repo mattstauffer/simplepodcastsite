@@ -1,3 +1,5 @@
+@import "sweetalert.scss";
+
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
     box-sizing: border-box;
@@ -87,7 +89,7 @@ body {
         border: 1px solid rgba(0, 0, 0, 0.1);
         padding: 1em;
         margin-bottom: 1em;
-        
+
         .episode__description {
             font-size: 0.8em;
             margin-top: 0;

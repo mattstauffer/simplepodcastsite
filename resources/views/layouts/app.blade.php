@@ -33,7 +33,7 @@
     <body>
         <div class="content">
             @include('partials.header', ['podcast' => $podcast])
-            
+
             @yield('content')
 
             <p class="footer">
@@ -53,5 +53,17 @@
         @endif
 
         @yield('scripts')
+
+        @if (session('flash_message'))
+            <script src="js/app.js"></script>
+            <script>
+                swal({
+                    title: "{{ session('flash_message.title') }}",
+                    text: "{{ session('flash_message.body') }}",
+                    timer: 1700,
+                    showConfirmButton: false
+                });
+            </script>
+        @endif
     </body>
 </html>

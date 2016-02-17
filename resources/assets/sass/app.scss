@@ -87,7 +87,7 @@ body {
         border: 1px solid rgba(0, 0, 0, 0.1);
         padding: 1em;
         margin-bottom: 1em;
-        
+
         .episode__description {
             font-size: 0.8em;
             margin-top: 0;
@@ -95,9 +95,21 @@ body {
     }
 }
 
-.back-to-index {
-    display: block;
-    text-align: center;
+.episode-nav {
+    padding: 0;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    li {
+        flex: 1;
+        padding: 1em;
+    }
 }
 
 @media only screen and (min-width: 500px) {

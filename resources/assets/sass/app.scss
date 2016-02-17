@@ -97,12 +97,17 @@ body {
 
 .episode-nav {
     padding: 0;
+
     ul {
         display: flex;
         justify-content: center;
         list-style: none;
+        margin-left: 0;
+        padding-left: 0;
     }
+
     li {
+        flex: 1;
         padding: 1em;
     }
 }

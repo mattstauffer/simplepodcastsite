@@ -71,9 +71,23 @@ body {
     font-size: 0.8em;
     margin-top: 0; }
 
-.back-to-index {
-  display: block;
-  text-align: center; }
+.episode-nav {
+  padding: 0; }
+  .episode-nav ul {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0; }
+  .episode-nav li {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 1em; }
 
 @media only screen and (min-width: 500px) {
   .title {

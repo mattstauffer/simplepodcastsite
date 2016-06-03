@@ -6,10 +6,10 @@
     <h2 class="episodes-title">Episodes</h2>
     <div>
         <ul class="episodes-list">
-            @foreach ($episodes as $key => $episode)
+            @foreach ($episodes as $episode)
             <li class="episode episode--in-list">
                 <div class="episode__date">{{ Carbon\Carbon::parse($episode->pubDate)->format('F j, Y H:i') }}</div>
-                <a href="/{{ $episodes->count() - $key }}">{{ $episode->title }}</a>
+                <a href="/{{ $episode->id }}">{{ $episode->title }}</a>
                 <p class="episode__description">{{ $episode->description }}</p>
 
                 @if (config('customize.disqus_shortname'))

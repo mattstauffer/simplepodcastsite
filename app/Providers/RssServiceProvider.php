@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\RssFeed;
 use Illuminate\Support\ServiceProvider;
 use Vinelab\Rss\Feed;
 use Vinelab\Rss\Rss;
@@ -19,6 +20,10 @@ class RssServiceProvider extends ServiceProvider
 //            return app('cache')->remember('feed', $minutes = 1, function () {
                 return (new Rss)->feed(config('customize.rss_url'));
 //            });
+        });
+
+        $this->app->singleton(RssFeed::class, function ($app) {
+            return RssFeed::rebuild((new Rss)->feed(config('customize.rss_url')));
         });
     }
 }

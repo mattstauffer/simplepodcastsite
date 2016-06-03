@@ -23,7 +23,7 @@ class RssServiceProvider extends ServiceProvider
         });
 
         $this->app->singleton(RssFeed::class, function ($app) {
-            return RssFeed::rebuild((new Rss)->feed(config('customize.rss_url')));
+            return RssFeed::fromFeed($app->make(Feed::class));
         });
     }
 }

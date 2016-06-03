@@ -13,7 +13,7 @@
                 <p class="episode__description">{{ $episode->description }}</p>
 
                 @if (config('customize.disqus_shortname'))
-                <a  style="font-size: 0.75em;" href="http://{{ config('customize.domain') }}/{{ $episodes->count() - $key }}#disqus_thread">0 Comments</a>
+                <a  style="font-size: 0.75em;" href="http://{{ config('customize.domain') }}/{{ $episode->id }}#disqus_thread">0 Comments</a>
                 @endif
             </li>
         @endforeach

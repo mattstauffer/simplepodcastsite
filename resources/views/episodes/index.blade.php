@@ -19,8 +19,6 @@
         @endforeach
         </ul>
     </div>
-
-    @include('customize.what-is-this')
 @endsection
 
 @section('scripts')

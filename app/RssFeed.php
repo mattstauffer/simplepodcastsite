@@ -4,21 +4,19 @@ namespace App;
 
 use Carbon\Carbon;
 use Vinelab\Rss\ArticlesCollection;
-use Vinelab\Rss\Feed;
+use Vinelab\Rss\Feeds\RSSFeed as VineRSSFeed;
+// use Vinelab\Rss\Rss;
+use App\VinelabsRssTemp\Rss;
 
-class RssFeed extends Feed
+class RssFeed extends VineRSSFeed
 {
     public $articles;
 
-    public function __construct(Feed $feed)
+    public function __construct(Rss $rss)
     {
+        $feed = $rss->feed(config('customize.rss_url'));
         $this->info = $feed->info();
         $this->buildArticles($feed->articles);
-    }
-
-    public static function fromFeed(Feed $feed)
-    {
-        return new static($feed);
     }
 
     /**

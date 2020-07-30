@@ -25,8 +25,8 @@
         ({{ Carbon\Carbon::parse($episode->pubDate)->format('F j, Y H:i') }})
         <br><br>
 
-        <audio controls preload="metadata" src="{{ $episode->guid }}">
-            <source src="{{ $episode->guid }}" type="audio/mpeg">
+        <audio controls preload="metadata" src="{{ $episode->enclosure['url'] }}">
+            <source src="{{ $episode->enclosure['url'] }}" type="audio/mpeg">
         </audio>
 
         @if (config('customize.disqus_shortname'))

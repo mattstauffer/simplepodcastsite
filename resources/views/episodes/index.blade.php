@@ -7,16 +7,16 @@
     <div>
         <ul class="episodes-list">
             @foreach ($episodes as $episode)
-            <li class="episode episode--in-list">
-                <div class="episode__date">{{ Carbon\Carbon::parse($episode->pubDate)->format('F j, Y H:i') }}</div>
-                <a href="/{{ $episode->id }}">{{ $episode->title }}</a>
-                <p class="episode__description">{{ $episode->description }}</p>
+                <li class="episode episode--in-list">
+                    <div class="episode__date">{{ Carbon\Carbon::parse($episode->pubDate)->format('F j, Y H:i') }}</div>
+                    <a href="/episodes/{{ $episode->id }}">{{ $episode->title }}</a>
+                    <p class="episode__description">{{ $episode->description }}</p>
 
-                @if (config('customize.disqus_shortname'))
-                <a  style="font-size: 0.75em;" href="http://{{ config('customize.domain') }}/{{ $episode->id }}#disqus_thread">0 Comments</a>
-                @endif
-            </li>
-        @endforeach
+                    @if (config('customize.disqus_shortname'))
+                        <a style="font-size: 0.75em;" href="//{{ config('customize.domain') }}/{{ $episode->id }}#disqus_thread">0 Comments</a>
+                    @endif
+                </li>
+            @endforeach
         </ul>
     </div>
 @endsection

@@ -3,17 +3,17 @@
 @section('content')
     <nav class="episode-nav">
         <ul>
-            @if (Request::path() != 1)
+            @if ($episode->id != 1)
             <li>
-                <a href="/{{ Request::path() - 1 }}">&lt;- Previous episode</a>
+                <a href="/episodes/{{ $episode->id - 1 }}">&lt;- Previous episode</a>
             </li>
             @endif
             <li>
                 <a href="/">All episodes</a>
             </li>
-            @if (Request::path() != $episodeCount)
+            @if ($episode->id != $episodeCount)
             <li>
-                <a href="/{{ Request::path() + 1 }}">Next episode -&gt;</a>
+                <a href="/episodes/{{ $episode->id + 1 }}">Next episode -&gt;</a>
             </li>
             @endif
         </ul>
@@ -34,7 +34,7 @@
             <div id="disqus_thread"></div>
             <script>
             var disqus_config = function () {
-                this.page.url = "http://{{ config('customize.domain') }}/{{ Request::path() }}";
+                this.page.url = "http://{{ config('customize.domain') }}/episodes/{{ $episode->id }}";
                 this.page.identifier = "{{ $episode->guid }}";
             };
             (function() { // DON'T EDIT BELOW THIS LINE

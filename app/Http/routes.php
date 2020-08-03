@@ -1,4 +1,4 @@
 <?php
 
 Route::get('/', 'EpisodeController@index');
-Route::get('{id}', 'EpisodeController@show');
+Route::get('/episodes/{id}', 'EpisodeController@show');

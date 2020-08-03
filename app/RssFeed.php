@@ -5,8 +5,7 @@ namespace App;
 use Carbon\Carbon;
 use Vinelab\Rss\ArticlesCollection;
 use Vinelab\Rss\Feeds\RSSFeed as VineRSSFeed;
-// use Vinelab\Rss\Rss;
-use App\VinelabsRssTemp\Rss;
+use Vinelab\Rss\Rss;
 
 class RssFeed extends VineRSSFeed
 {

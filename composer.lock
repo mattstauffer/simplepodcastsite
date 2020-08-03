@@ -1988,16 +1988,16 @@
         },
         {
             "name": "vinelab/rss",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Vinelab/RSS.git",
-                "reference": "3062a251f855e71af3fb66616fdbd625a3d7d289"
+                "reference": "adac5fe643cb91e283d3fb13b2d29f2eeb74586d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Vinelab/RSS/zipball/3062a251f855e71af3fb66616fdbd625a3d7d289",
-                "reference": "3062a251f855e71af3fb66616fdbd625a3d7d289",
+                "url": "https://api.github.com/repos/Vinelab/RSS/zipball/adac5fe643cb91e283d3fb13b2d29f2eeb74586d",
+                "reference": "adac5fe643cb91e283d3fb13b2d29f2eeb74586d",
                 "shasum": ""
             },
             "require": {
@@ -2027,7 +2027,7 @@
                 }
             ],
             "description": "An elegant RSS 2.0 and Atom client.",
-            "time": "2020-07-18T16:26:23+00:00"
+            "time": "2020-08-03T09:51:23+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -2892,6 +2892,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2015-10-02T06:51:40+00:00"
         },
         {

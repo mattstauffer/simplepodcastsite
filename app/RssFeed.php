@@ -31,7 +31,7 @@ class RssFeed extends VineRSSFeed
             })
             ->values()
             ->each(function ($item, $key) {
-                $item->id = $key +1;
+                $item->id = $key + 1;
             })
             ->keyBy('id');
     }

@@ -1,4 +1,5 @@
 <?php
+
 return [
     'domain' => env('DOMAIN'),
     'rss_url' => env('RSS_URL'),
@@ -15,4 +16,3 @@ return [
     'disqus_shortname' => env('DISQUS_SHORTNAME'),
     'background_color' => env('BACKGROUND_COLOR'),
 ];
-
